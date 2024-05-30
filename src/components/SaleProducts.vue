@@ -4,29 +4,28 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div class="w-full h-full relative">
+  <div class="container">
+    <div class="w-full h-full relative">
     <div
       class="group bg-white p-4 border rounded-md shadow-3xl w-full h-auto hover:absolute top-0 left-0 z-30 hover:scale-105 duration-200"
     >
-      <div class="relative">
+      <div class="">
         <span
-          v-if="product.sale"
+          v-if="product.sale == true"
           class="absolute text-[10px] border border-red-500 rounded-xl py-0.5 px-1 font-medium right-6 top-6"
-        >
-          -25%
-        </span>
-        <img class="w-full" :src="product.img" alt="" />
+          >-25%</span
+        ><img class="w-full" :src="product.img" alt="" />
       </div>
       <div class="flex gap-2 items-center my-5">
         <p
           :class="product.sale ? 'text-[#FF4343]' : 'text-black'"
-          class="text-sm font-medium"
+          class="text-[#FF4343] text-sm font-medium"
         >
           {{ product.salePrice }}₽
         </p>
         <div>
           <p
-            v-if="product.sale"
+            v-if="product.sale == true"
             class="text-[#4646468C]/50 text-[10px] line-through decoration-red-500"
           >
             {{ product.price }}₽
@@ -46,6 +45,7 @@ const props = defineProps({
         В корзину
       </button>
     </div>
+  </div>
   </div>
 </template>
 

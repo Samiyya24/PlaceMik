@@ -8,6 +8,9 @@ export default {
     extend: {
       boxShadow: {
         '3xl': '-3px 9px 45px -18px rgba(0,0,0,0.75)',
+      },
+      shadowBox: {
+        '3xl': ' 0px -34px 80px -18px rgba(0,0,0,0.75);'
       }
     },
     container: {
