@@ -47,9 +47,8 @@ const marples = [
         <img src="/images/image1.png" alt="" />
       </div>
     </div>
-    <button
-      class="group-hover:block hidden py-2 mt-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white w-full"
-    >
+
+    <button class="gradient-border border border-gradien py-2 mt-7">
       Все магазины
     </button>
   </div>

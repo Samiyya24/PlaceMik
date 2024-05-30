@@ -10,14 +10,21 @@ const props = defineProps({
     >
       <div class="">
         <span
-          class="absolute text-[10px] border border-red-500 rounded-xl py-0.5 px-1 font-medium right-2 top-2"
+          v-if="product.sale == true"
+          class="absolute text-[10px] border border-red-500 rounded-xl py-0.5 px-1 font-medium right-6 top-6"
           >-25%</span
         ><img class="w-full" :src="product.img" alt="" />
       </div>
       <div class="flex gap-2 items-center my-5">
-        <p class="text-[#FF4343] text-sm font-medium">{{ product.sale }}₽</p>
+        <p
+          :class="product.sale ? 'text-[#FF4343]' : 'text-black'"
+          class="text-[#FF4343] text-sm font-medium"
+        >
+          {{ product.salePrice }}₽
+        </p>
         <div>
           <p
+            v-if="product.sale == true"
             class="text-[#4646468C]/50 text-[10px] line-through decoration-red-500"
           >
             {{ product.price }}₽
